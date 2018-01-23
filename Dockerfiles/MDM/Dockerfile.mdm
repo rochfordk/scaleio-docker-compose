@@ -1,0 +1,9 @@
+FROM centos:7
+ENV container docker
+
+# Add the necessary RPMs from the local file system
+# NB - You'll need to download these RPMs from EMC and add them to the RPMS folder before building your images
+ADD ../RPMS/EMC-ScaleIO-mdm-2.0-13000.211.el7.x86_64.rpm /EMC-ScaleIO-mdm-2.0-13000.211.el7.x86_64.rpm
+
+# Install 
+RUN rpm -i EMC-ScaleIO-mdm-2.0-13000.211.el7.x86_64.rpm
